@@ -99,37 +99,3 @@ return legendData;
 }
 
 }
-
-// init Tree Map with placeholder url 
-url = 'https://in-polis-app28.ads.iu.edu/daarws/GetTreeMapData.aspx?';
-let geog,
-  rcvi,
-  DominantReligion,
-  dy,
-  glid,
-  dy2,
-  rcvi2,
-  NumberofClusters,
-  ColorScheme,
-  DenomFamily,
-  DenomFamily2,
-  // FromPie,
-  parameters;
-
-parameters = {
-  geog: 'COUNTRY',
-  rcvi: '4',
-  DominantReligion: '2',
-  dy: '2010',
-  glid: '011',
-  dy2: '2010',
-  rcvi2: '3',
-  NumberofClusters: '5',
-  ColorScheme: 'Reds',
-  DenomFamily: '25',
-  DenomFamily2: '25',
-  // FromPie: 'true', // Not needed here
-};
-parameters = $.param(parameters);
-
-visualizeTree(url + parameters);
