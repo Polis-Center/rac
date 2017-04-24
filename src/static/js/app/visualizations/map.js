@@ -2,6 +2,8 @@
 // initialize Global Variables and call methods to plot visual
 //************************************************************
 
+function visualizeMap(dmd_data, us_data) {
+
 var tooltip = d3.select("body").append("div"); // declare the tooltip div
 var color = d3.scaleOrdinal(d3.schemeCategory10),
 	margin = {
@@ -85,9 +87,9 @@ var state_hash = {
 };
 
 
-d3.json("data/dmd.json", function (error, data) {
+d3.json(dmd_data, function (error, data) {
 	var stateData = mapStateData(data);
-	d3.json("data/us.json", function (error, json) {
+	d3.json(us_data, function (error, json) {
 
 		svg.selectAll("path")
 			.data(json.features)
@@ -203,8 +205,13 @@ function drawDonut(data) {
 		.attr("dy", ".35em")
 		.attr("dx", "-1em")
 		.text(function (d) {
-			if (d.data.value > 3) return d.data.value + " %";
-		});
+        if (d.data.data1 > 3 && Math.round(data_value_sum) <= 100) {
+            return `${d.data.data1  } %`;         
+        }
+        else if (d.data.data1 > 100 && ((d.data.data1 / data_value_sum) * 100 ) > 3)  {
+            return ((d.data.data1 / data_value_sum) * 100).toFixed(2) + "%";         
+        }
+      });
 
 	function tweenPie(b) {
 		var i = d3.interpolate({
@@ -245,4 +252,5 @@ function drawDonut(data) {
 
 
 
+}
 }

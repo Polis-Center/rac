@@ -76,19 +76,23 @@
 
       <div class="col col-md-3">
       <form id="map-info">
-        <label for="map-type">Pie Wedges Represent What?</label>
+        <label for="map-type">Select a Map Type</label>
         <div class="form-group" id="map-type">
           <div class="radio">
             <label><input type="radio" name="opt-map-representation" value="2" checked="true">Predominant Religion Families</label>
           </div>
           <div class="radio">
             <label><input type="radio" name="opt-map-representation" value='3' >Religion Characteristics</label>
+          </div>          <div class="radio">
+            <label><input type="radio" name="opt-map-representation" value='3' >Religion Censuses</label>
+          </div>          <div class="radio">
+            <label><input type="radio" name="opt-map-representation" value='3' >US Censuses</label>
           </div>
         </div>
         <label for="map-details">Religion Census</label>
         <div class="form-group" id="map-details">
           <select class="form-control" id="sel-map-type" name="map-details-type">
-        </select>
+        </select> 
           <!--<label for="sel-map-percentage">Select Map Details</label>-->
           <select class="form-control" id="sel-map-percentage" name="map-details-percentage">
         </select>
@@ -196,5 +200,7 @@
 <script src="https://d3js.org/d3-request.v1.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script src="src/static/js/app/visualizations/map.js"></script>
+<script src="src/static/js/app/main.js"></script>
+<script src="src/static/js/app/utils.js"></script>
 
 </html>

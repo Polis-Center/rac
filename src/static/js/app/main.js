@@ -2,7 +2,7 @@ $(document).ready(() => {
   getYears();
   getCensusType();
   getCensusPercentage('Adherents'); // Default Selection
-  submitForm();
+  // submitForm();
 
   $('#sel-map-type').change(() => {
     const name = $('#sel-map-type option:selected').text();
@@ -40,7 +40,6 @@ $(document).ready(() => {
     console.log('state changed');
   });
 
-  function submitForm() {
     $('#map-info').on('submit', (e) => {
       // submits form via ajax get
       e.preventDefault();
@@ -95,12 +94,14 @@ $(document).ready(() => {
       if (document.URL.indexOf("/tree") !== -1){
         visualizeTree(url + parameters);
       }
+      else if (document.URL.indexOf("/map") !== -1) {
+        visualizeMap("data/dmd.json", "data/us.json");
+      }
       else {
         visualizePieChart(url + parameters);
 
       }
     });
-  }
 
   // Form submit function.
   function autoSubmitForm() {

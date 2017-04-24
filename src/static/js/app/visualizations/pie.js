@@ -95,7 +95,7 @@ function visualizePieChart(url) {
 
     //* ***********************************************************
     // Add Text on arc of circle and
-    // at bottom show total no of books count
+    // at bottom show total
     //* ***********************************************************
     donut.append('text')
       .attr('transform', (d) => {
