@@ -97,7 +97,7 @@ $(document).ready(() => {
       else if (document.URL.indexOf("/map") !== -1) {
         visualizeMap("data/dmd.json", "data/us.json");
       }
-      else {
+      else if (document.URL.indexOf("/pie") !== -1) {
         visualizePieChart(url + parameters);
 
       }
